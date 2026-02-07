@@ -3,10 +3,6 @@ import java.util.Scanner;
 public class StudentUtilityApp {
     static Scanner scanner = new Scanner(System.in);
 
-    static void exitApplication(){
-        System.out.println("Thank you for using the application");
-        scanner.close();
-    }
     public static void main(String[] args) {
         boolean isProgramRunning = true;
 
@@ -22,10 +18,39 @@ public class StudentUtilityApp {
             String userOption = scanner.nextLine();
             switch(userOption){
                 case "1":
-                    System.out.println(1);
+                    boolean isFirstIntValid = false;
+                    int a  = 0 , b = 0;
+                    do{
+                    System.out.print("Enter first number: ");
+                    if(scanner.hasNextInt()){
+                       a = scanner.nextInt();
+                       scanner.nextLine();
+                       isFirstIntValid = true;
+                    }
+                    else{
+                        System.out.println("Not a valid integer");
+                        scanner.nextLine();
+                    }
+                    } while(!isFirstIntValid);
+
+                    boolean isSecondIntValid = false;
+                    do{
+                        System.out.print("Enter second number: ");
+                        if(scanner.hasNextInt()){
+                            b = scanner.nextInt();
+                            scanner.nextLine();
+                            isSecondIntValid = true;
+                        }
+                        else{
+                            System.out.println("Not a valid integer");
+                            scanner.nextLine();
+                        }
+                    } while(!isSecondIntValid);
+
+                    int result = addTwoNumbers(a,b);
+                    System.out.println("Result: "+result);
                     break;
                 case "2":
-                    System.out.println(2);
                     break;
                 case "3":
                     System.out.println(3);
@@ -42,5 +67,15 @@ public class StudentUtilityApp {
                     break;
             }
         }
+    }
+
+    private static int addTwoNumbers(int a, int b) {
+        return a + b;
+    }
+
+
+    static void exitApplication(){
+        System.out.println("Thank you for using the application");
+        scanner.close();
     }
 }
