@@ -51,6 +51,19 @@ public class StudentUtilityApp {
                     System.out.println("Result: "+result);
                     break;
                 case "2":
+                    boolean isNumberValid = false;
+                    do{
+                        System.out.print("Enter a number: ");
+                        if(scanner.hasNextInt()){
+                            int userInput = scanner.nextInt();
+                            scanner.nextLine();
+                            System.out.println(isEvenOrOdd(userInput));
+                            isNumberValid = true;
+                        }else{
+                            System.out.println("Not a valid integer");
+                            scanner.nextLine();
+                        }
+                    }while (!isNumberValid);
                     break;
                 case "3":
                     System.out.println(3);
@@ -73,6 +86,9 @@ public class StudentUtilityApp {
         return a + b;
     }
 
+    static String isEvenOrOdd(int num){
+        return num % 2 == 0 ? "EVEN" : "ODD";
+    }
 
     static void exitApplication(){
         System.out.println("Thank you for using the application");
