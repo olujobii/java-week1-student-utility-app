@@ -88,8 +88,22 @@ public class StudentUtilityApp {
                         }
                     }while(!isNumberPrinted);
                     break;
+                //DISPLAYING DAYS OF THE WEEK
                 case "4":
-                    System.out.println(4);
+                    boolean isDaysOfWeekPrinted = false;
+                    do {
+                        System.out.print("Enter a number to display the corresponding day of the week: ");
+                        if (!scanner.hasNextInt()) {
+                            System.out.println("Not a valid integer, try again");
+                            scanner.nextLine();
+                            continue;
+                        }
+
+                        int num = scanner.nextInt();
+                        scanner.nextLine();
+                        isDaysOfWeekPrinted = printDayOfWeek(num);
+
+                    }while (!isDaysOfWeekPrinted);
                     break;
                 case "5":
                     exitApplication();
@@ -113,6 +127,35 @@ public class StudentUtilityApp {
     static void printNumbers(int num){
         for(int i = 1 ; i <= num ; i++){
             System.out.println(i);
+        }
+    }
+
+    static boolean printDayOfWeek(int num){
+        switch(num){
+            case 1:
+                System.out.println("SUNDAY");
+                return true;
+            case 2:
+                System.out.println("MONDAY");
+                return true;
+            case 3:
+                System.out.println("TUESDAY");
+                return true;
+            case 4:
+                System.out.println("WEDNESDAY");
+                return true;
+            case 5:
+                System.out.println("THURSDAY");
+                return true;
+            case 6:
+                System.out.println("FRIDAY");
+                return true;
+            case 7:
+                System.out.println("SATURDAY");
+                return true;
+            default:
+                System.out.println("Invalid number entered");
+                return false;
         }
     }
 
