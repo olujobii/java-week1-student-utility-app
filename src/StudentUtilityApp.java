@@ -17,6 +17,7 @@ public class StudentUtilityApp {
 
             String userOption = scanner.nextLine();
             switch(userOption){
+                //ADDING TWO NUMBERS
                 case "1":
                     boolean isFirstIntValid = false;
                     int a  = 0 , b = 0;
@@ -50,6 +51,7 @@ public class StudentUtilityApp {
                     int result = addTwoNumbers(a,b);
                     System.out.println("Result: "+result);
                     break;
+                //CHECKING IF NUMBER IS EVEN OR ODD
                 case "2":
                     boolean isNumberValid = false;
                     do{
@@ -65,8 +67,26 @@ public class StudentUtilityApp {
                         }
                     }while (!isNumberValid);
                     break;
+                //PRINT NUMBER FROM 1 TO N
                 case "3":
-                    System.out.println(3);
+                    boolean isNumberPrinted = false;
+                    do{
+                        System.out.print("Enter a number: ");
+                        if(!scanner.hasNextInt()){
+                            System.out.println("Not a valid integer, try again");
+                            scanner.nextLine();
+                            continue;
+                        }
+
+                        int num = scanner.nextInt();
+                        scanner.nextLine();
+                        if(num <= 1){
+                            System.out.println("Your value cannot be less than or equal to 1");
+                        }else{
+                            printNumbers(num);
+                            isNumberPrinted = true;
+                        }
+                    }while(!isNumberPrinted);
                     break;
                 case "4":
                     System.out.println(4);
@@ -88,6 +108,12 @@ public class StudentUtilityApp {
 
     static String isEvenOrOdd(int num){
         return num % 2 == 0 ? "EVEN" : "ODD";
+    }
+
+    static void printNumbers(int num){
+        for(int i = 1 ; i <= num ; i++){
+            System.out.println(i);
+        }
     }
 
     static void exitApplication(){
