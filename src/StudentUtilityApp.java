@@ -105,6 +105,7 @@ public class StudentUtilityApp {
 
                     }while (!isDaysOfWeekPrinted);
                     break;
+                //EXIT PROGRAM
                 case "5":
                     exitApplication();
                     isProgramRunning = false;
@@ -133,34 +134,34 @@ public class StudentUtilityApp {
     static boolean printDayOfWeek(int num){
         switch(num){
             case 1:
-                System.out.println("SUNDAY");
+                System.out.println("Monday");
                 return true;
             case 2:
-                System.out.println("MONDAY");
+                System.out.println("Tuesday");
                 return true;
             case 3:
-                System.out.println("TUESDAY");
+                System.out.println("Wednesday");
                 return true;
             case 4:
-                System.out.println("WEDNESDAY");
+                System.out.println("Thursday");
                 return true;
             case 5:
-                System.out.println("THURSDAY");
+                System.out.println("Friday");
                 return true;
             case 6:
-                System.out.println("FRIDAY");
+                System.out.println("Saturday");
                 return true;
             case 7:
-                System.out.println("SATURDAY");
+                System.out.println("Sunday");
                 return true;
             default:
-                System.out.println("Invalid number entered");
+                System.out.println("Invalid day");
                 return false;
         }
     }
 
     static void exitApplication(){
-        System.out.println("Thank you for using the application");
+        System.out.println("Thank you for using the app");
         scanner.close();
     }
 }
