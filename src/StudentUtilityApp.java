@@ -7,6 +7,7 @@ public class StudentUtilityApp {
         boolean isProgramRunning = true;
 
         while(isProgramRunning) {
+            System.out.println(" ");
             System.out.println("==== STUDENT UTILITY APP ====");
             System.out.println("1. Add two numbers");
             System.out.println("2. Check if a number is EVEN or ODD");
@@ -57,7 +58,7 @@ public class StudentUtilityApp {
                 isUserInputValid = true;
             }
             else{
-                System.out.println("Not a valid integer");
+                System.out.println("Not a valid number. The number entered must be a whole number");
                 scanner.nextLine();
             }
         } while(!isUserInputValid);
@@ -71,7 +72,7 @@ public class StudentUtilityApp {
                 isUserInputValid = true;
             }
             else{
-                System.out.println("Not a valid integer");
+                System.out.println("Not a valid number. The number entered must be a whole number");
                 scanner.nextLine();
             }
         } while(!isUserInputValid);
@@ -97,7 +98,7 @@ public class StudentUtilityApp {
                 System.out.println(result);
                 isNumberValid = true;
             }else{
-                System.out.println("Not a valid integer");
+                System.out.println("Not a valid number. The number entered must be a whole number");
                 scanner.nextLine();
             }
         }while (!isNumberValid);
@@ -112,9 +113,9 @@ public class StudentUtilityApp {
     static void printNumbersFrom1ToN(){
         boolean isNumberPrinted = false;
         do{
-            System.out.print("Enter a number: ");
+            System.out.print("Enter a number to print from 1 to N: ");
             if(!scanner.hasNextInt()){ //Checking if user's input is a valid integer
-                System.out.println("Not a valid integer, try again");
+                System.out.println("Not a valid number. The number entered must be a whole number");
                 scanner.nextLine();
                 continue;
             }
@@ -130,6 +131,7 @@ public class StudentUtilityApp {
         }while(!isNumberPrinted);
     }
 
+    //PRINT NUMBERS FROM 1 TO N
     private static void printNumbers(int num){
         for(int i = 1 ; i <= num ; i++){
             System.out.println(i);
@@ -140,9 +142,9 @@ public class StudentUtilityApp {
     static void printDayOfWeek(){
         boolean isDaysOfWeekPrinted = false;
         do {
-            System.out.print("Enter a number to display the corresponding day of the week: ");
+            System.out.print("Enter a number (1-7) for day of the week: ");
             if (!scanner.hasNextInt()) { //Checking if user's input is a valid integer
-                System.out.println("Not a valid integer, try again");
+                System.out.println("Not a valid number. The number entered must be a whole number");
                 scanner.nextLine();
                 continue;
             }
