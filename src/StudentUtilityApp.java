@@ -19,6 +19,7 @@ public class StudentUtilityApp {
             String userOption = scanner.nextLine();
             //SWITCH STATEMENT TO EXECUTE BLOCK OF CODE BASED ON USER'S SELECTION.
             switch(userOption){
+                //ADDING TWO NUMBERS
                 case "1":
                    addingTwoNumbers();
                     break;
